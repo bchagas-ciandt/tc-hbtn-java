@@ -1,8 +1,6 @@
 public class PrintStringVariable {
    public static void main(String[] args) {
    String texto = "Holberton School";
-   System.out.println(texto);
-   System.out.println(texto);
-   System.out.println(texto.substring(0, 9));
+   System.out.printf("%1$s\n%1$s\n%2$s\n", texto, texto.substring(0, 9));
    }
  }
