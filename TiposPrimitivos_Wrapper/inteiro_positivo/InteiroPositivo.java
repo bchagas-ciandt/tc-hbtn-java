@@ -1,5 +1,5 @@
 public class InteiroPositivo {
-    Integer valor;
+    int valor;
 
     public InteiroPositivo(Integer xi) {
         if (xi.intValue() <= 0 || xi== null) {
