@@ -2,11 +2,7 @@ public class InteiroPositivo {
     private int valor;
 
     public InteiroPositivo(Integer xi) {
-        if (xi.intValue() <= 0 || xi== null) {
-            throw new IllegalArgumentException("Valor nao eh um valor inteiro positivo");
-        } else {
-            valor = xi;
-        }
+        this.setValor(xi);
     }
     public InteiroPositivo(String xs) {
         if (Integer.parseInt(xs) <= 0 || xs == null) {
