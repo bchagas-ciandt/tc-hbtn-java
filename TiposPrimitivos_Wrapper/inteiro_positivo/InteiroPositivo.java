@@ -2,7 +2,11 @@ public class InteiroPositivo {
     private int valor;
 
     public InteiroPositivo(Integer xi) {
+<<<<<<< HEAD
         this.setValor(xi);
+=======
+            this.setValor(xi);
+>>>>>>> e6b8761fec26f7d1fa2a24d97bc271983b1ea360
     }
     public InteiroPositivo(String xs) {
         if (Integer.parseInt(xs) <= 0 || xs == null) {
