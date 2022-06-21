@@ -6,7 +6,7 @@ public class Program {
         retangulo.setLargura(7);
         retangulo.setAltura(4);
 
-        System.out.printf(new Locale("US"),"Area: %.2f\n", retangulo.area());
+        System.out.printf(Locale.US, "Area: %.2f\n", retangulo.area());
         System.out.println(retangulo.toString());
     }
 }

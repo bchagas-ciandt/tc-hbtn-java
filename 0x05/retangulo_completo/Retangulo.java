@@ -1,3 +1,5 @@
+import java.util.Locale;
+
 public class Retangulo extends FormaGeometrica{
     private double largura;
     private double altura;
@@ -27,12 +29,9 @@ public class Retangulo extends FormaGeometrica{
             throw new IllegalArgumentException("Altura deve ser maior ou igual a 0");
         }
         this.altura = altura;
-
-
     }
 
-   @Override
     public String toString() {
-        return String.format(new Locale("US"),"[Retangulo] %.2f / %.2f", largura, altura);
+        return String.format(Locale.US, "[Retangulo] %.2f / %.2f", largura, altura);
     }
 }
