@@ -1,9 +1,7 @@
 import java.util.ArrayList;
-import java.util.List;
-import java.util.stream.Collectors;
 
 public class ListaTodo {
-    private List<Tarefa> tarefas;
+    private ArrayList<Tarefa> tarefas;
 
     public ListaTodo() {
         tarefas = new ArrayList<>();
@@ -64,3 +62,4 @@ public class ListaTodo {
         }
     }
 }
+
