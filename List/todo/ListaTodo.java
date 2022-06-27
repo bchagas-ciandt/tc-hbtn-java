@@ -1,4 +1,5 @@
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 
 public class ListaTodo {
@@ -61,6 +62,10 @@ public class ListaTodo {
                 System.out.printf("[ ]  Id: %d - Descricao: %s\n", tarefa.getIdentificador(), tarefa.getDescricao());
             }
         }
+    }
+
+    public List<Tarefa> getTarefas() {
+        return Collections.unmodifiableList(tarefas);
     }
 }
 
