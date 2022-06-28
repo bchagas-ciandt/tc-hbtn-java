@@ -4,26 +4,19 @@ public class Tarefa {
     private int identificador;
 
     public Tarefa(String descricao, int identificador) {
-        this.setDescricao(descricao);
+        modificarDescricao(descricao);
         this.identificador = identificador;
     }
 
-    public void modificarDescricao(String descricaoNova) {
-        if (descricaoNova.isBlank() || descricaoNova == null) {
-            throw new IllegalArgumentException("Descricao de tarefa invalida");
+    public void modificarDescricao(String descricao){
+        if (descricao.isBlank() || descricao == null) {
+            throw new RuntimeException("Descricao de tarefa invalida");
         }
-        this.descricao = descricaoNova;
+        this.descricao = descricao;
     }
 
     public String getDescricao() {
         return descricao;
-    }
-
-    public void setDescricao(String descricao) {
-        if (descricao.isBlank() || descricao == null) {
-            throw new IllegalArgumentException("Descricao de tarefa invalida\n");
-        }
-        this.descricao = descricao;
     }
 
     public boolean isEstahFeita() {

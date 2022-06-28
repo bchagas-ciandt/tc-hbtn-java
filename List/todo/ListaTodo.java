@@ -11,35 +11,33 @@ public class ListaTodo {
 
     public void adicionarTarefa(Tarefa tarefa) {
         for (Tarefa tarefa1 : tarefas) {
-            if (tarefa1.getIdentificador() == tarefa.getIdentificador()) {
-                throw new IllegalArgumentException("Tarefa com identificador "+ tarefa.getIdentificador() + " ja existente na lista");
+            if (tarefa.getIdentificador() == tarefa1.getIdentificador()) {
+                throw new RuntimeException("Tarefa com identificador " + tarefa.getIdentificador() +  " ja existente na lista");
             }
         }
         tarefas.add(tarefa);
     }
 
     public boolean marcarTarefaFeita(int identificador) {
-        boolean isMarcada = false;
+        boolean isFeita = false;
         for (Tarefa tarefa : tarefas) {
             if (tarefa.getIdentificador() == identificador) {
                 tarefa.setEstahFeita(true);
-                isMarcada = true;
-                break;
+                isFeita = true;
             }
         }
-        return isMarcada;
+        return isFeita;
     }
 
     public boolean desfazerTarefa(int identificador) {
-        boolean isMarcada = false;
+        boolean isNaoFeita = false;
         for (Tarefa tarefa : tarefas) {
             if (tarefa.getIdentificador() == identificador) {
                 tarefa.setEstahFeita(false);
-                isMarcada = true;
-                break;
+                isNaoFeita = true;
             }
         }
-        return isMarcada;
+        return isNaoFeita;
     }
 
     public void desfazerTodas() {
@@ -63,7 +61,6 @@ public class ListaTodo {
             }
         }
     }
-
     public List<Tarefa> getTarefas() {
         return Collections.unmodifiableList(tarefas);
     }
