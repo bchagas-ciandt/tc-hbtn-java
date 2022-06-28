@@ -10,7 +10,7 @@ public class Tarefa {
 
     public void modificarDescricao(String descricao){
         if (descricao.isBlank() || descricao == null) {
-            throw new RuntimeException("Descricao de tarefa invalida");
+            throw new IllegalArgumentException("Descricao de tarefa invalida");
         }
         this.descricao = descricao;
     }
@@ -31,3 +31,4 @@ public class Tarefa {
         return identificador;
     }
 }
+
