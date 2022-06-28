@@ -6,7 +6,7 @@ public class ListaTodo {
     private List<Tarefa> tarefas;
 
     public ListaTodo() {
-        tarefas = new ArrayList<>();
+        tarefas = new ArrayList<Tarefa>();
     }
 
     public void adicionarTarefa(Tarefa tarefa) {
@@ -65,3 +65,4 @@ public class ListaTodo {
         return Collections.unmodifiableList(tarefas);
     }
 }
+
