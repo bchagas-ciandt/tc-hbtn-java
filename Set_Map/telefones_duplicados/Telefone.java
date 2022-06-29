@@ -24,6 +24,12 @@ public class Telefone {
 
     @Override
     public int hashCode() {
-        return Objects.hash(codigoArea, numero);
+        int primo = 31;
+        int hash = 7;
+
+        hash = primo * hash + ((codigoArea == null) ? 0 : codigoArea.hashCode());
+        hash = primo * hash + ((numero == null) ? 0 : numero.hashCode());
+
+        return hash;
     }
 }
