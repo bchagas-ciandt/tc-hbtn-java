@@ -9,7 +9,7 @@ public class SerializarEstudantes<T>{
         this.nomeArquivo = nomeArquivo;
     }
 
-    public void serializar(List<Estudante> estudantes) {
+    public void serializar(List<T> estudantes) {
         try {
             FileOutputStream fout = new FileOutputStream(nomeArquivo);
             ObjectOutputStream oos = new ObjectOutputStream(fout);
@@ -23,12 +23,12 @@ public class SerializarEstudantes<T>{
         }
     }
 
-    public List<Estudante> desserializar() {
-        List<Estudante> estudantes = new ArrayList<Estudante>();
+    public List<T> desserializar() {
+        List<T> estudantes = new ArrayList<T>();
         try {
             FileInputStream fin = new FileInputStream(nomeArquivo);
             ObjectInputStream ois = new ObjectInputStream(fin);
-            estudantes = (List<Estudante>) ois.readObject();
+            estudantes = (List<T>) ois.readObject();
             ois.close();
             return estudantes;
         } catch (FileNotFoundException e) {
