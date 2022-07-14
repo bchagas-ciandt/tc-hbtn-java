@@ -1,6 +1,6 @@
 import java.io.*;
 import java.util.List;
-
+@SuppressWarnings("unchecked")
 public class SerializarEstudantes<T>{
     private final String nomeArquivo;
 
@@ -9,27 +9,44 @@ public class SerializarEstudantes<T>{
     }
 
     public void serializar(List<T> estudantes) {
+        FileOutputStream fout = null;
+        ObjectOutputStream oos = null;
         try {
-            FileOutputStream fout = new FileOutputStream(nomeArquivo);
-            ObjectOutputStream oos = new ObjectOutputStream(fout);
+            fout = new FileOutputStream(nomeArquivo);
+            oos = new ObjectOutputStream(fout);
             oos.writeObject(estudantes);
-            oos.close();
-
         } catch (IOException e) {
             System.out.println("Nao foi possivel serializar");
+        } finally {
+            if (oos != null) {
+                try {
+                    oos.close();
+                } catch (IOException e) {
+                    System.out.println("Nao foi possivel serializar");
+                }
+            }
         }
     }
 
     public List<T> desserializar() {
-        List<T> estudantes;
+        List<T> estudantes = null;
+        FileInputStream fin = null;
+        ObjectInputStream ois = null;
         try {
-            FileInputStream fin = new FileInputStream(nomeArquivo);
-            ObjectInputStream ois = new ObjectInputStream(fin);
+            fin = new FileInputStream(nomeArquivo);
+            ois = new ObjectInputStream(fin);
             estudantes = (List<T>) ois.readObject();
-            ois.close();
             return estudantes;
         } catch (ClassNotFoundException | IOException e) {
             System.out.println("Nao foi possivel desserializar");
+        } finally {
+            if ( ois != null) {
+                try {
+                    ois.close();
+                } catch (IOException e) {
+                    System.out.println("Nao foi possivel desserializar");
+                }
+            }
         }
         return null;
     }
