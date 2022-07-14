@@ -1,4 +1,5 @@
 import java.io.*;
+import java.util.ArrayList;
 import java.util.List;
 
 public class SerializarEstudantes<T>{
@@ -23,7 +24,7 @@ public class SerializarEstudantes<T>{
     }
 
     public List<Estudante> desserializar() {
-        List<Estudante> estudantes;
+        List<Estudante> estudantes = new ArrayList<Estudante>();
         try {
             FileInputStream fin = new FileInputStream(nomeArquivo);
             ObjectInputStream ois = new ObjectInputStream(fin);
@@ -40,3 +41,4 @@ public class SerializarEstudantes<T>{
         return null;
     }
 }
+
