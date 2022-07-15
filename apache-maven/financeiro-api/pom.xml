@@ -9,7 +9,7 @@
   <version>0.0.1-SNAPSHOT</version>
 
   <name>financeiro-api</name>
-  <description>Projeto Financeiro Demo uisando apache Maven Demo</description>
+  <description>Projeto Financeiro Demo usando apache Maven Demo</description>
   <!-- FIXME change it to the project's website -->
   <url>http://www.example.com</url>
 
