@@ -6,9 +6,10 @@
 
   <groupId>com.techcamps.financeiro</groupId>
   <artifactId>financeiro-api</artifactId>
-  <version>1.0-SNAPSHOT</version>
+  <version>0.0.1-SNAPSHOT</version>
 
   <name>financeiro-api</name>
+  <description>Projeto Financeiro Demo uisando apache Maven Demo</description>
   <!-- FIXME change it to the project's website -->
   <url>http://www.example.com</url>
 
@@ -52,27 +53,15 @@
     <pluginManagement><!-- lock down plugins versions to avoid using Maven defaults (may be moved to parent pom) -->
       <plugins>
         <plugin>
-          <groupId>org.apache.maven.plugins</groupId>
-          <artifactId>maven-compiler-plugin</artifactId>
-          <version>2.3.2</version>
-          <configuration>
-            <source>1.6</source>
-            <target>1.6</target>
-          </configuration>
-        </plugin>
-        <plugin>
           <artifactId>maven-assembly-plugin</artifactId>
           <configuration>
             <archive>
 
               <manifest>
                 <addClasspath>true</addClasspath>
-                <mainClass>com.techcamps.financeiro.FinanceiroMain</mainClass>
+                <mainClass>FinanceiroMain</mainClass>
               </manifest>
             </archive>
-
-            <!-- ADICIONO AO NOME DO JAR FINAL UM COMPLEMENTO DIZENDO
-                 QUE ELE CONTÉM AS DEPENDÊNCIAS  -->
 
             <descriptorRefs>
               <descriptorRef>jar-with-dependencies</descriptorRef>
@@ -80,9 +69,6 @@
           </configuration>
           <executions>
             <execution>
-
-              <!-- DETERMINO QUE O JAR GERADO INCLUIRÁ AS DEPENDÊNCIAS E ELAS
-              SERÃO EMPACOTADAS JUNTO COM O PROJETO EM UM ÚNICO JAR  -->
 
               <id>make-my-jar-with-dependencies</id>
               <phase>package</phase>
